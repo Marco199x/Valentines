@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <title>Will you be my Valentine?</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h1 class="header_text">WIll you be my Valentine Katelyn Joy Dizon?</h1>
+        <div class="gif_container">
+            <img src="https://media.tenor.com/KTx1WW-lmfUAAAAj/peach-and-goma-peach-goma.gif">
+        </div>
+        <div class="buttons">
+            <button class="btn" id="yesButton" onclick="nextpage()">Yes</button>
+            <button class="btn" id="noButton" onmouseover="moveButton()">No</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+</html>
+<script>
+    function nextpage() {
+      window.location.href = "yes.html";
+    }
+    function moveNoButton() {
+            let noBtn = document.getElementById("noButton");
+            let container = document.querySelector(".container");
+            let maxX = container.clientWidth - noBtn.clientWidth;
+            let maxY = container.clientHeight - noBtn.clientHeight;
+            
+            let newX = Math.random() * maxX;
+            let newY = Math.random() * maxY;
+            
+            noBtn.style.position = "absolute";
+            noBtn.style.left = `${newX}px`;
+            noBtn.style.top = `${newY}px`;
+        }
+
+        document.getElementById("noButton").addEventListener("mouseover", moveNoButton);
+        document.getElementById("noButton").addEventListener("click", moveNoButton);
+  </script>
